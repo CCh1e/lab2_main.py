@@ -1,0 +1,24 @@
+import math
+# Підключення власного модуля. 
+# Важливо: файл my_module.py має бути в тій самій папці (проекті)
+from my_module import sum_squares_module
+
+def calc_expression(x, y):
+    return math.cos(x)**2 + math.sin(y)**2
+
+print("--- Завдання 2 (з модулем) ---")
+try:
+    # Виклик функції з поточного файлу
+    x = float(input("Введіть x: "))
+    y = float(input("Введіть y: "))
+    print(f"z = {calc_expression(x, y):.4f}")
+
+    # Виклик функції з імпортованого модуля
+    n = int(input("Введіть N для розрахунку суми квадратів: "))
+    result = sum_squares_module(n)
+    print(f"Сума квадратів (через модуль) = {result}")
+
+except ValueError:
+    print("Помилка введення.")
+except ImportError:
+    print("Помилка: Не знайдено файл my_module.py")
