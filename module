@@ -1,0 +1,8 @@
+#модуль 
+
+def sum_squares_module(n):
+    """Функція знаходження суми квадратів від 1 до N"""
+    total_sum = 0
+    for i in range(1, n + 1):
+        total_sum += i**2
+    return total_sum
