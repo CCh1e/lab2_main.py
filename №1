@@ -1,0 +1,31 @@
+import math
+
+# Функція 1: Обчислення виразу
+def calc_expression(x, y):
+    # z = cos^2(x) + sin^2(y)
+    z = math.cos(x)**2 + math.sin(y)**2
+    return z
+
+# Функція 2: Сума квадратів від 1 до N
+def sum_squares(n):
+    total_sum = 0
+    for i in range(1, n + 1):
+        total_sum += i**2
+    return total_sum
+
+# Основна частина програми
+print("--- Завдання 1 ---")
+try:
+    # Введення даних для функції 1
+    val_x = float(input("Введіть x: "))
+    val_y = float(input("Введіть y: "))
+    res_z = calc_expression(val_x, val_y)
+    print(f"Значення z = {res_z:.4f}")
+
+    # Введення даних для функції 2
+    val_n = int(input("Введіть N (ціле число): "))
+    res_s = sum_squares(val_n)
+    print(f"Сума квадратів чисел від 1 до {val_n} = {res_s}")
+
+except ValueError:
+    print("Помилка: введіть коректні числа.")
